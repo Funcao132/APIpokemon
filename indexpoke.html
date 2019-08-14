@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="estilo.css">
+    <title>pokemon API</title>
+</head>
+<body>
+
+    <nav class="navega">
+        <img src="pokemon-icone.png" width="200px" height="70px" id="icone">
+    </nav>
+    <h1 class="title">Projeto API para Iniciante</h1> 
+    <h2 class="title">Duelo Pokemons</h2>
+    <button class="btn" onclick="consultarPokemons()">Nova Batalha</button>
+
+    <div class="pokemon-list"  id="listaPokemon">
+        <div class="pokemon" id="pokemon-1">
+            <img src="pokemon.png" id="img">
+            <p>charmeleon</p>
+        </div>
+        <div class="vs">VS.</div>
+        <div class="pokemon" id="pokemon-2">
+            <img src="pokemon 2.png" id="img">
+            <p>wartortle</p>
+       </div>
+    </div>
+    <footer class="rodape">2019 - Desenvolvedor Júnior Almeida  -- Programador Front-end Jr. </footer>
+
+    <script>
+
+    function consultarPokemon(id, num){
+        fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        .then(function(response){
+            response.json()
+            .then(function(pokemon){
+                criarPokemon(pokemon, num)
+            })
+        })
+    }
+    function consultarPokemons(){
+        let primeiroID = Math.round( Math.random() * 150)
+        let segundoID = Math.round(Math.random() * 150)
+
+        consultarPokemon(primeiroID, 1)
+        consultarPokemon(segundoID, 2)
+       
+    }
+
+    function criarPokemon(pokemon, num) {
+        
+        let lista = document.getElementById("listaPokemon")
+        // Vamor converter
+        let item = lista.querySelector(`#pokemon-${num}`)
+
+        let imagen = item.getElementsByTagName("img")[0]
+        imagen.setAttribute("src", pokemon.sprites.front_default)
+
+
+        let nome = item.getElementsByTagName("p")[0]
+        nome.textContent = pokemon.name
+        }
+
+
+      
+
+    </script>
+    
+</body>
+</html>

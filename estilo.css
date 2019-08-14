@@ -1,0 +1,90 @@
+body{
+    font-family: OCR A Std, monospace;
+    font-size: 12px;
+    margin: 0;
+    background:  #4169E1;
+    overflow-x: hidden;
+}
+.navega{
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    padding-bottom: 4%;
+    padding: 1%;
+    position: relative;
+    background: #FF6347;
+    -webkit-animation-name: nav; 
+    -webkit-animation-duration: 8s; 
+    animation-iteration-count: infinite;
+}
+#icone{
+    margin-left: 5px; ;
+
+}
+.title{
+    text-align: center;
+    padding: 15px;
+    padding-top: 5%;
+
+}
+.pokemon-list{
+    display: grid;
+    grid-template-columns: 3fr 200px 3fr;
+    max-width: 500px;
+    margin: auto;
+    padding-bottom: 40px;
+}
+.pokemon{
+    border: 1px solid#000;
+    padding: 10px;
+    background: #f5f5f5;
+    text-align: center;
+
+}
+.vs{
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+}
+#img{
+    width: 100%;
+}
+.rodape{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    background: navajowhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    padding: 10px;
+    font-size: 15px;
+    margin-top: 15px;
+    bottom: 0;
+}
+.btn{
+    background-color: coral;
+    border-radius: 12px;
+    border-color: #000;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 25px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.btn:hover{
+    background: #FF4500;
+}
+
+
+/* animation */
+@-webkit-keyframes nav {
+    0%   {background-color: tomato;}
+    25%  {background-color: sandybrown;}
+    50%  {background-color: seagreen;}
+    100% {background-color: #FF6347;}
+}
